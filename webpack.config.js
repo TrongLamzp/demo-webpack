@@ -1,4 +1,7 @@
 const path = require("path");
+const { webpack } = require("webpack");
+// const HtmlWebPackPlugin = require("html-webpack-plugin");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/index.js", // Dẫn tới file index.js ta đã tạo
@@ -16,11 +19,28 @@ module.exports = {
       },
       {
         test: /\.css$/, // Sử dụng style-loader, css-loader cho file .css
-        use: ["style-loader", "css-loader"]
+         use: ["style-loader", "css-loader"]
+        // use: [
+        //   MiniCssExtractPlugin.loader,
+        //   "css-loader", "postcss-loader",
+        // ]
       }
     ]
   },
   // Chứa các plugins sẽ cài đặt trong tương lai
   plugins: [
+    // new webpack.ProvidePlugin({
+    //   $:'query',
+    //   jQuery: 'jquery'
+    // }),
+    // new MiniCssExtractPlugin({
+    //   filename: "styles.css",
+    //   chunkFilename: "styles.css"
+    // }),
+    // new HtmlWebPackPlugin({
+    //   template: "./src/index.html",
+    //   filename: "./index.html"
+    // }),
+
   ]
 };

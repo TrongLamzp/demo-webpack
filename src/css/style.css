@@ -1,4 +1,36 @@
-h1 {
-    color: red;
-    text-align: center  ;
+@tailwind base;
+@tailwind components;
+@font-face {
+    font-family: 'poppin';
+    src: url("./public/fonts/Poppins-Light.ttf");
+}
+@tailwind utilities;
+
+.c-link {
+    @apply
+    text-white 
+    md:text-black 
+    hover:text-blue-900 
+    transition 
+    duration-300 
+    ease-linear
+}
+.c-menu {
+    @apply
+    fixed
+    top-0
+    left-0 
+    w-full 
+    h-screen 
+    flex 
+    flex-col 
+    justify-center 
+    items-center 
+    bg-pink-700 
+    /* bg-opacity-75  */
+    md:bg-transparent
+    md:h-auto
+    md:flex-row
+    md:justify-between
+    md:static
 }
